@@ -18,5 +18,8 @@ declare module "styled-components" {
       l: string;
       xl: string;
     };
+    colors: {
+      ezraYellow: string;
+    };
   }
 }

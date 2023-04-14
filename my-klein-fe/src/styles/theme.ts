@@ -15,4 +15,7 @@ export const theme: DefaultTheme = {
     l: "5rem",
     xl: "7rem",
   },
+  colors: {
+    ezraYellow: "rgb(230,161,83)",
+  },
 };
