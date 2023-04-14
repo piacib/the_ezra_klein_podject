@@ -9,6 +9,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "",
+        element: <TableView />,
+      },
+      {
         path: "table",
         element: <TableView />,
       },
