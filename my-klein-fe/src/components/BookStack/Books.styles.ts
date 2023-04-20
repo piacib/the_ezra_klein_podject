@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { devices } from "../../styles/devices";
+
 const book1Color = "#942343";
 const pageColor = "#fffff0";
 const ribbon1Color = "#ff785b";
@@ -16,12 +17,12 @@ const book7Color = "#fcc800";
 export const BookContainer = styled.div`
   font-size: 5px;
   height: fit-content;
+  background-color: ${(props) => props.theme.colors.background};
   width: 25em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: -3px;
   @media ${devices.tablet} {
     font-size: 6px;
   }
@@ -38,18 +39,63 @@ export const Book1 = styled.div`
   border-right-style: none;
   background: ${pageColor};
 `;
-export const Ribbon1 = styled.div`
-  height: 2.5em;
+interface RibbonProps {
+  ribbonColor?: string;
+}
+export const Ribbon = styled.div<RibbonProps>`
+  height: 2.8em;
   width: 2em;
-  background: ${ribbon1Color};
+  background: ${(props) =>
+    props.ribbonColor ? props.ribbonColor : ribbon1Color};
   position: absolute;
   margin: 1.2em 0 0 0.95em;
+  z-index: 1;
+  :before,
+  :after {
+    content: "";
+    top: 2.8em;
+    position: absolute;
+  }
+  :before {
+    border-left: 0px solid
+      ${(props) => (props.ribbonColor ? props.ribbonColor : ribbon1Color)};
+    border-right: 1em solid transparent;
+    border-top: 1.2em solid
+      ${(props) => (props.ribbonColor ? props.ribbonColor : ribbon1Color)};
+  }
+  :after {
+    right: 0;
+    border-left: 1em solid transparent;
+    border-right: 0px solid
+      ${(props) => (props.ribbonColor ? props.ribbonColor : ribbon1Color)};
+    border-top: 1.2em solid
+      ${(props) => (props.ribbonColor ? props.ribbonColor : ribbon1Color)};
+  }
 `;
-export const BookCut = styled.div`
-  background: ${bookCutColor};
-  margin: 0 0 0 97%;
+const left = css`
+  left: 0;
+`;
+const right = css`
+  right: 0;
+`;
+interface Props {
+  side: "left" | "right";
+}
+export const BookCut = styled.div<Props>`
+  background-color: ${(props) => props.theme.colors.background};
+  position: absolute;
   width: 0.5em;
   height: 3em;
+  ${(props) => {
+    switch (props.side) {
+      case "left":
+        return left;
+      case "right":
+        return right;
+      default:
+        return right;
+    }
+  }}
 `;
 export const Book2 = styled.div`
   position: relative;
@@ -70,31 +116,10 @@ export const Book2 = styled.div`
   }
   :after {
     background: white;
-    margin: 5% 0 0 39%;
+    margin: 1em 0 0 4.5em;
     width: 3em;
     height: 2em;
   }
-`;
-export const RibbonCut1 = styled.div`
-  position: absolute;
-  margin: 0.5em 0 0 0.2em;
-  border-left: 0px solid ${ribbon1Color};
-  border-right: 1em solid transparent;
-  border-top: 1.2em solid ${ribbon1Color};
-`;
-export const RibbonCut2 = styled.div`
-  position: absolute;
-  margin: 0.5em 0 0 1.2em;
-  border-left: 1em solid transparent;
-  border-right: 0px solid ${ribbon1Color};
-  border-top: 1.2em solid ${ribbon1Color};
-`;
-export const RibbonCut3 = styled.div`
-  position: absolute;
-  margin: 0 0 0 0.2em;
-  height: 0.5em;
-  width: 2em;
-  background: ${ribbon1Color};
 `;
 export const Book3 = styled.div`
   position: relative;
@@ -106,12 +131,9 @@ export const Book3 = styled.div`
   border-left-style: none;
   background: ${pageColor};
 `;
-export const Ribbon3 = styled.div`
-  height: 2.5em;
-  width: 2em;
-  position: absolute;
+export const Ribbon3 = styled(Ribbon)`
   background: ${ribbon3Color};
-  margin: 1em 0 0 11.45em;
+  right: 1em;
 `;
 export const BookCut3 = styled.div`
   background: ${bookCutColor}; //#a0d8ef;
@@ -139,31 +161,13 @@ export const Book4 = styled.div`
 
   :after {
     background: white;
-    margin: 4% 0 0 37%;
+    /* margin: ${3.5 / 4}em 0 0 5.92em;
+     */
+    left: 5.92em;
+    top: ${3.5 / 4}em;
     width: 4em;
     height: 2em;
   }
-`;
-export const RibbonCut4 = styled.div`
-  position: absolute;
-  margin: 0.5em 0 0 12.7em;
-  border-left: 0px solid ${ribbon3Color};
-  border-right: 1em solid transparent;
-  border-top: 1.2em solid ${ribbon3Color};
-`;
-export const RibbonCut5 = styled.div`
-  position: absolute;
-  margin: 0.5em 0 0 13.7em;
-  border-left: 1em solid transparent;
-  border-right: 0px solid ${ribbon3Color};
-  border-top: 1.2em solid ${ribbon3Color};
-`;
-export const RibbonCut6 = styled.div`
-  position: absolute;
-  margin: 0 0 0 12.7em;
-  height: 0.5em;
-  width: 2em;
-  background: ${ribbon3Color};
 `;
 export const Book5 = styled.div`
   position: relative;
@@ -186,7 +190,7 @@ export const Book5 = styled.div`
 
   :after {
     background: white;
-    margin: 5% 0 0 39%;
+    margin: 1em 0 0 39%;
     width: 3em;
     height: 2em;
   }
@@ -200,23 +204,13 @@ export const Book6 = styled.div`
   border-left-style: none;
   background: ${pageColor};
 `;
-export const Ribbon6 = styled.div`
-  height: 2.5em;
-  width: 2em;
-  position: absolute;
-  background: ${ribbon3Color}; //#a4d5bd;
-  margin: 1.4em 0 0 11em;
-`;
-export const BookCut6 = styled.div`
-  background: ${bookCutColor};
-  width: 0.5em;
-  height: 3em;
+export const Ribbon6 = styled(Ribbon)`
+  right: 2em;
 `;
 export const Book7 = styled.div`
   position: relative;
   height: 4em;
   width: 20em;
-  margin-bottom: 3px;
   background: ${book7Color};
   :before,
   :after {
@@ -238,25 +232,4 @@ export const Book7 = styled.div`
     height: 2.2em;
     border-radius: 1.2em;
   }
-`;
-export const RibbonCut7 = styled.div`
-  position: absolute;
-  margin: 0.5em 0 0 12.5em;
-  border-left: 0px solid ${ribbon3Color};
-  border-right: 1em solid transparent;
-  border-top: 1.2em solid ${ribbon3Color};
-`;
-export const RibbonCut8 = styled.div`
-  position: absolute;
-  margin: 0.5em 0 0 13.5em;
-  border-left: 1em solid transparent;
-  border-right: 0px solid ${ribbon3Color};
-  border-top: 1.2em solid ${ribbon3Color};
-`;
-export const RibbonCut9 = styled.div`
-  position: absolute;
-  margin: 0 0 0 12.5em;
-  height: 0.5em;
-  width: 2em;
-  background: ${ribbon3Color};
 `;
