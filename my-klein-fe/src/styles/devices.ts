@@ -1,4 +1,4 @@
-const sizes = {
+export const sizes = {
   mobileS: "320px",
   mobileM: "375px",
   mobileL: "425px",
@@ -7,12 +7,21 @@ const sizes = {
   laptopL: "1440px",
   desktop: "2560px",
 };
+export const sizesRem = {
+  mobileS: `${320 / 16}rem`,
+  mobileM: `${375 / 16}rem`,
+  mobileL: `${425 / 16}rem`,
+  tablet: `${768 / 16}rem`,
+  laptop: `${1024 / 16}rem`,
+  laptopL: `${1440 / 16}rem`,
+  desktop: `${2560 / 16}rem`,
+};
 export const devices = {
-  mobileS: `(min-width: ${sizes.mobileS})`,
-  mobileM: `(min-width: ${sizes.mobileM})`,
-  mobileL: `(min-width: ${sizes.mobileL})`,
-  tablet: `(min-width: ${sizes.tablet})`,
-  laptop: `(min-width: ${sizes.laptop})`,
-  laptopL: `(min-width: ${sizes.laptopL})`,
-  desktop: `(min-width: ${sizes.desktop})`,
+  mobileS: `(min-width: ${sizesRem.mobileS})`,
+  mobileM: `(min-width: ${sizesRem.mobileM})`,
+  mobileL: `(min-width: ${sizesRem.mobileL})`,
+  tablet: `(min-width: ${sizesRem.tablet})`,
+  laptop: `(min-width: ${sizesRem.laptop})`,
+  laptopL: `(min-width: ${sizesRem.laptopL})`,
+  desktop: `(min-width: ${sizesRem.desktop})`,
 };
