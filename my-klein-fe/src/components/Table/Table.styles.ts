@@ -20,7 +20,7 @@ export const TableCaption = styled.caption`
 `;
 
 export const TableHead = styled.tr`
-  background-color: ${(props) => props.theme.colors.ezraYellow}; ;
+  background-color: ${(props) => props.theme.colors.ezraYellow};
 `;
 
 const active = css`
@@ -87,16 +87,23 @@ export const RatingCol = styled(TableCol)``;
 export const TableCell = styled.td`
   text-align: start;
   width: fit-content;
+`;
+export const AuthorCell = styled(TableCell)``;
+export const BookTitleCell = styled(TableCell)``;
+export const EpisodeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  span {
+    /* padding: 0; */
+  }
+`;
+export const EpisodeDateSpan = styled.span`
+  display: block;
+  width: 12ch;
+  margin: 0;
+`;
+export const EpisodeTitleSpan = styled.span``;
 
-  /* vertical-align: bottom; */
-`;
-export const AuthorCell = styled(TableCell)`
-  text-align: left;
-  /* max-width: 3rem; */
-`;
-export const BookTitle = styled(TableCell)`
-  /* max-width: 3rem; */
-`;
 export const BookCover = styled.img`
   /* width: 2rem; */
   height: 5rem;
@@ -110,121 +117,80 @@ export const BookCoverContainer = styled.div`
   place-items: center;
 `;
 export const RatingCell = styled(TableCell)``;
-const media = css`
+export const BookCoverCell = styled(TableCell)``;
+export const GuestRecomendations = styled(TableCol)``;
+export const GuestRecCell = styled(TableCell)``;
+
+const smallScreenTableDisplayMedia = css`
   @media all and (max-width: 57em) {
-    table,
-    tr,
-    td {
+    ${TableElement} {
+      display: block;
+      padding: 0;
+    }
+    ${TableRow} {
+    }
+    ${TableCell} {
       display: block;
     }
-    tr {
-      padding: 0.7em 2vw 0;
-    }
-
-    th {
+    ${TableCol} {
       display: none;
     }
-    caption {
+    ${TableCaption} {
       font-style: normal;
       background-color: rgba(0, 0, 0, 0.35);
       color: #fff;
       font-weight: bold;
     }
-    * ::before {
-      text-align: end;
-      width: 10ch;
-      font-weight: bold;
-    }
     ${TableRow} {
-      //       td:nth-child(1) {
-      //         display: none;
-      //       }
-      //       td:nth-child(2) {
-      //         grid-column: 1;
-      //         grid-row: 1/-1;
-      //       }
-      //       td:nth-child(3)::before {
-      //         content: "Title: ";
-      //       }
-      //       td:nth-child(4)::before {
-      //         content: "Author: ";
-      //       }
-      //       td:nth-child(5)::before {
-      //         content: "Rating: ";
-      //       }
-      //       td::before {
-      //         display: inline;
-      //         font-weight: bold;
-      //       }
-      //       td:nth-of-type(2)::before {
-      //         font-style: normal;
-      //       }
-      //       td {
-      //         display: flex;
-      //         flex-direction: row;
-      //         width: 100%;
-      //       }
-      //       display: grid;
-      //       grid-template-columns: 4em auto;
-      //       grid-template-rows: 1fr 1fr 1fr;
-
-      //       grid-gap: 1em 0.5em;
-      //       align-items: center;
-      //       td > p {
-      //         max-width: none;
-      //         margin: 0;
-      //       }
+      display: block;
+      display: grid;
+      grid-template-columns: auto 4em;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 1em 0.5em;
+      align-items: center;
+      padding: 0.7em 2vw 0;
+      > ::before {
+        text-align: end;
+        width: 11ch;
+        font-weight: bold;
+      }
+      td:nth-child(1) {
+        display: none;
+      }
+      ${BookCoverCell} {
+        grid-column: 2;
+        grid-row: 1/-1;
+      }
+      ${BookTitleCell}::before {
+        content: "Title: ";
+      }
+      ${AuthorCell}::before {
+        content: "Author: ";
+      }
+      ${RatingCell}::before {
+        content: "Rating: ";
+      }
+      ${GuestRecCell}::before {
+        content: "Guest Recs: ";
+      }
+      ${TableCell} {
+        ::before {
+          display: inline;
+          font-weight: bold;
+        }
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        > span {
+          max-width: none;
+          margin: 0;
+          padding-left: 0.5rem;
+        }
+      }
     }
   }
 `;
 export const TableContainer = styled.div`
   margin: 0 ${(props) => props.theme.spacing.s};
-  ${media}
+  ${smallScreenTableDisplayMedia}
 `;
-export const GuestRecomendations = styled(TableCol)``;
-export const GuestRecCell = styled(TableCell)``;
-
-// ${HiddenRow} {
-//     padding-bottom: 1em;
-//     * ::before {
-//       text-align: end;
-//       width: 14ch;
-//       font-weight: bold;
-//       display: block;
-//     }
-//     td {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-start;
-//       justify-content: flex-start;
-//       /* grid-template-columns: auto; */
-//       grid-template-rows: 1fr 1fr;
-//       grid-gap: 1em 0.5em;
-//       align-items: center;
-//       padding-top: 0;
-//     }
-//     * {
-// //         max-height: fit-content;
-// //         transition: height 0.6s, padding 0.6s;
-//     }
-//     max-height: fit-content;
-//     transition: height 0.6s, padding 0.6s;
-//     td {
-// //         grid-column: 2;
-// //         padding-left: 0;
-// //         padding-top: 0;
-//     }
-//     td div {
-//       padding: 0;
-//       width: 100%;
-//       display: flex;
-//     }
-//     td div:nth-child(1)::before {
-//       content: "Episode Title: ";
-//       width: calc(4em + 0.5em + 10ch);
-//   }
-//   td div:nth-child(2)::before {
-//       content: "Air Date: ";
-//       width: calc(4em + 0.5em + 10ch);
-//     }
-//   }
