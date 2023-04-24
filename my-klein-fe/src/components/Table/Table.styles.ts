@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { devices } from "../../styles/devices";
+import { devices, sizesRem } from "../../styles/devices";
 
 export const TableElement = styled.table`
   margin-top: ${(props) => props.theme.spacing.l};
@@ -36,8 +36,6 @@ const notActive = css`
   transition: max-height 0.3s, padding 0.3s;
 `;
 export const HiddenRow = styled.tr<Props>`
-  /* display: none; */
-  /* background-color: green; */
   max-height: 0;
   overflow-y: hidden;
   transition: height 0.6s;
@@ -88,14 +86,17 @@ export const TableCell = styled.td`
   text-align: start;
   width: fit-content;
 `;
-export const AuthorCell = styled(TableCell)``;
-export const BookTitleCell = styled(TableCell)``;
+export const AuthorCell = styled(TableCell)`
+  @media ${devices.tablet} {
+    max-width: 12rem;
+  }
+`;
+export const BookTitleCell = styled(TableCell)`
+  max-width: 15rem;
+`;
 export const EpisodeContainer = styled.div`
   display: flex;
   flex-direction: row;
-  span {
-    /* padding: 0; */
-  }
 `;
 export const EpisodeDateSpan = styled.span`
   display: block;
@@ -105,7 +106,6 @@ export const EpisodeDateSpan = styled.span`
 export const EpisodeTitleSpan = styled.span``;
 
 export const BookCover = styled.img`
-  /* width: 2rem; */
   height: 5rem;
   aspect-ratio: 0.6;
   margin: 0 auto;
@@ -121,8 +121,8 @@ export const BookCoverCell = styled(TableCell)``;
 export const GuestRecomendations = styled(TableCol)``;
 export const GuestRecCell = styled(TableCell)``;
 
-const smallScreenTableDisplayMedia = css`
-  @media all and (max-width: 57em) {
+const tabletAndBelowTableDisplayMediaQ = css`
+  @media all and (max-width: ${sizesRem.tablet}) {
     ${TableElement} {
       display: block;
       padding: 0;
@@ -137,8 +137,8 @@ const smallScreenTableDisplayMedia = css`
     }
     ${TableCaption} {
       font-style: normal;
-      background-color: rgba(0, 0, 0, 0.35);
-      color: #fff;
+      background-color: ${(props) => props.theme.colors.ezraYellow};
+      color: ${(props) => props.theme.colors.accent};
       font-weight: bold;
     }
     ${TableRow} {
@@ -161,11 +161,18 @@ const smallScreenTableDisplayMedia = css`
         grid-column: 2;
         grid-row: 1/-1;
       }
-      ${BookTitleCell}::before {
-        content: "Title: ";
+      ${BookTitleCell} {
+        max-width: fit-content;
+
+        ::before {
+          content: "Title: ";
+        }
       }
-      ${AuthorCell}::before {
-        content: "Author: ";
+      ${AuthorCell} {
+        max-width: fit-content;
+        ::before {
+          content: "Author: ";
+        }
       }
       ${RatingCell}::before {
         content: "Rating: ";
@@ -192,5 +199,5 @@ const smallScreenTableDisplayMedia = css`
 `;
 export const TableContainer = styled.div`
   margin: 0 ${(props) => props.theme.spacing.s};
-  ${smallScreenTableDisplayMedia}
+  ${tabletAndBelowTableDisplayMediaQ}
 `;
