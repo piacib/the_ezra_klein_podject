@@ -114,7 +114,9 @@ export const HiddenRowElement = ({ showInfo, data }: HiddenRowElementProps) => {
       <td colSpan={6}>
         {data.map((title) => (
           <EpisodeContainer>
-            <EpisodeDateSpan>{convertToDateStr(episodes[title]?.date)}</EpisodeDateSpan>
+            <EpisodeDateSpan>
+              {convertToDateStr(episodes[title]?.date)}
+            </EpisodeDateSpan>
             <EpisodeTitleSpan>{title}</EpisodeTitleSpan>
           </EpisodeContainer>
         ))}
