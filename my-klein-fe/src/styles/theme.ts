@@ -11,5 +11,6 @@ export const theme: DefaultTheme = {
     ezraYellow: "#e6a153",
     accent: "#0f3d4f",
     background: "#e2ded0",
+    tableRowSecondary: "aliceblue",
   },
 };

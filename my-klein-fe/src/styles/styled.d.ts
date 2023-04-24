@@ -11,9 +11,7 @@ declare module "styled-components" {
       xl: string;
     };
     colors: {
-      ezraYellow: string;
-      accent: string;
-      background: string;
+      [k: string]: string;
     };
   }
 }
