@@ -1,3 +1,5 @@
+// https://www.googleapis.com/books/v1/volumes?q=babel
+// `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}`
 const titleSearch = {
     "kind": "books#volumes",
     "totalItems": 2918,
@@ -812,6 +814,13 @@ const titleSearch = {
       }
     ]
   }
+  const titleSearchErrorResponse = {
+    "kind": "books#volumes",
+    "totalItems": 0
+  }
+ 
+//   https://www.googleapis.com/books/v1/volumes/ZWRQEAAAQBAJ
+//   `https://www.googleapis.com/books/v1/volumes/${bookId}`
 const idSearch = {
     "kind": "books#volume",
     "id": "ZWRQEAAAQBAJ",
@@ -927,3 +936,28 @@ const idSearch = {
       "quoteSharingAllowed": false
     }
   }
+const idSearchErrorResponse = {
+    "error": {
+      "code": 503,
+      "message": "Service temporarily unavailable.",
+      "errors": [
+        {
+          "message": "Service temporarily unavailable.",
+          "domain": "global",
+          "reason": "backendFailed"
+        }
+      ]
+    }
+  }
+
+  const keys = [
+    'description',
+'pageCount',
+'categories',
+'averageRating',
+'ratingsCount',
+  ]
+
+
+// Object.entries(books).filter(arr=> arr[1].id === 'ERROR')
+
