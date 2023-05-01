@@ -13,5 +13,8 @@ declare module "styled-components" {
     colors: {
       [k: string]: string;
     };
+    sizing: {
+      [k: string]: string;
+    };
   }
 }
