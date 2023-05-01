@@ -1,7 +1,12 @@
 import React from "react";
+import { FooterContainer, GithubLink, SpotifyLink } from "./Footer.styles";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return <FooterContainer>
+    <SpotifyLink/>
+    <GithubLink/>
+
+  </FooterContainer>;
 };
 
 export default Footer;
