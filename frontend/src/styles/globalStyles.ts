@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
   #root, body {
     background-color: ${(props) => props.theme.colors.background};
   }
+  p {
+    color: ${(props) => props.theme.colors.accent}
+  }
 `;
 
 export default GlobalStyle;
