@@ -54,7 +54,7 @@ const Table = () => {
           </TableHead>
         </thead>
         <TBody>
-          {books.slice(0, 40).map((title) => (
+          {books.slice(0, 10).map((title) => (
             <TableRows title={title} data={data.books[title]} />
           ))}
         </TBody>
