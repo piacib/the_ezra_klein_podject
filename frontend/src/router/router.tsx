@@ -4,6 +4,7 @@ import TableView from "../pages/TableView";
 import RandomBookView from "../pages/RandomBookView";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Paths from "./paths";
+import BooksPage from "../pages/BooksPage/BooksPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +20,8 @@ export const router = createBrowserRouter([
         element: <TableView />,
       },
       {
-        path: Paths.randombook,
-        element: <RandomBookView />,
+        path: Paths.books,
+        element: <BooksPage />,
       },
     ],
     errorElement: <ErrorPage />,
