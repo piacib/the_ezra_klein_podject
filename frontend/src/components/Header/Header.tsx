@@ -9,6 +9,7 @@ const Header = () => {
       <Nav>
         <StyledLink to={Paths.home}>Home</StyledLink>
         <StyledLink to={Paths.randombook}>Random Book</StyledLink>
+        <StyledLink to={Paths.books}>Books</StyledLink>
       </Nav>
       <Container>
         <Books />
