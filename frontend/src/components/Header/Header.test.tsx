@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { render } from "../../test/test_utils";
 import "@testing-library/jest-dom";
 import Header from "./Header";
-import Paths from "../../router/paths";
+import paths from "../../router/paths";
 
 describe("Header renders element", () => {
   it("headline", () => {
@@ -25,11 +25,11 @@ describe("Header links work", () => {
   it("Random Book link", async () => {
     render(<Header />);
     const element = screen.getByText(/Random Book/i);
-    expect(element).toHaveAttribute("href", "/" + Paths.randombook);
+    expect(element).toHaveAttribute("href", "/" + paths.randombook);
   });
   it("Home link", async () => {
     render(<Header />);
     const element = screen.getByText(/Home/i);
-    expect(element).toHaveAttribute("href", "/" + Paths.home);
+    expect(element).toHaveAttribute("href", "/" + paths.home);
   });
 });
