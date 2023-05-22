@@ -76,7 +76,7 @@ interface RightButtonProps {
 // Display buttons on hover
 export const LeftCarouselButton = styled(CarouselButton)<LeftButtonProps>`
   left: 0;
-  transform: translate(-100%, -50%);
+  transform: translate(-50%, -50%);
 
   ${CarouselContainer}:hover & {
     transform: translate(0%, -50%);
@@ -86,7 +86,7 @@ export const LeftCarouselButton = styled(CarouselButton)<LeftButtonProps>`
 // Position the buttons to their respective sides
 export const RightCarouselButton = styled(CarouselButton)<RightButtonProps>`
   right: 0;
-  transform: translate(100%, -50%);
+  transform: translate(50%, -50%);
 
   ${CarouselContainer}:hover & {
     transform: translate(0%, -50%);
