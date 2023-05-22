@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   #root, body {
     background-color: ${(props) => props.theme.colors.background};
   }
-  p {
+  p,a {
     color: ${(props) => props.theme.colors.accent}
   }
 `;
