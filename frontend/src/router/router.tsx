@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <BookPage />,
+        element: <BooksPage />,
       },
       {
         path: paths.table,
