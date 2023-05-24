@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-export const BookCardContainer = styled.div`
+export const BookCardContainer = styled(Link)`
   margin: 1rem;
   height: 18rem;
 `;
