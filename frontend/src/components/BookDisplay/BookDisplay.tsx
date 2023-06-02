@@ -122,45 +122,41 @@ const BookDisplay = () => {
   }
   return (
     <BookContainer>
-      {data && (
-        <>
-          <CoverInfo>
-            <CoverData>
-              <Title>
-                {data.title} <br />
-              </Title>
-              <Subtitle>{data.subtitle}</Subtitle>
-              <Authors>by {data.authors}</Authors>
-            </CoverData>
-            <Cover
-              srcSet={`
+      <CoverInfo>
+        <CoverData>
+          <Title>
+            {data.title} <br />
+          </Title>
+          <Subtitle>{data.subtitle}</Subtitle>
+          <Authors>by {data.authors}</Authors>
+        </CoverData>
+        <Cover
+          srcSet={`
               ${data.image.small} 300w, 
               ${data.image.medium} 575w,
               ${data.image.large} 615w,
               `}
-              src={`${data.image.small}`}
-              alt={`${data.title} Book Cover`}
-            />
-          </CoverInfo>
-          <BookDataContainer>
-            <PageCount>
-              {data.pageCount}
-              <br /> pages
-            </PageCount>
-            <RatingContainer>
-              {data.averageRating} <Star size={1} />
-              <br />
-              {data.ratingsCount} reviews
-            </RatingContainer>
-            <PublishDate>
-              Published <br />
-              {dateGenerator(data.publishedDate)}
-            </PublishDate>
-          </BookDataContainer>
-          <Description dangerouslySetInnerHTML={{ __html: data.description }} />
-          <Catagories list={data.categories} />
-        </>
-      )}
+          src={`${data.image.small}`}
+          alt={`${data.title} Book Cover`}
+        />
+      </CoverInfo>
+      <BookDataContainer>
+        <PageCount>
+          {data.pageCount}
+          <br /> pages
+        </PageCount>
+        <RatingContainer>
+          {data.averageRating} <Star size={1} />
+          <br />
+          {data.ratingsCount} reviews
+        </RatingContainer>
+        <PublishDate>
+          Published <br />
+          {dateGenerator(data.publishedDate)}
+        </PublishDate>
+      </BookDataContainer>
+      <Description dangerouslySetInnerHTML={{ __html: data.description }} />
+      <Catagories list={data.categories} />
     </BookContainer>
   );
 };
