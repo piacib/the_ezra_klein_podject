@@ -11,7 +11,11 @@ declare module "styled-components" {
       xl: string;
     };
     colors: {
-      [k: string]: string;
+      ezraYellow: string;
+      accent: string;
+      background: string;
+      tableRowSecondary: string;
+      ezraYellowOpacity: (opacity: number) => string;
     };
     sizing: {
       [k: string]: string;

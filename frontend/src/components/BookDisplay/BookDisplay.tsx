@@ -27,7 +27,7 @@ export const Title = styled.h1`
   max-width: 40ch;
   /* font-size: 2rem; */
 `;
-export const Authors = styled.p``;
+export const Authors = styled.h3``;
 export const AverageRating = styled.div``;
 export const RatingsCount = styled.div``;
 export const Description = styled.div`
@@ -35,7 +35,8 @@ export const Description = styled.div`
 `;
 export const BookContainer = styled.div`
   padding: ${(props) => props.theme.spacing.xs};
-  display: grid;
+  margin: auto;
+  max-width: 100rem;
 `;
 export const BookDataChild = styled.p`
   padding: ${(props) => props.theme.spacing.xs};
@@ -47,7 +48,7 @@ export const BookDataChild = styled.p`
   }
 `;
 export const BookDataContainer = styled.div`
-  --border: 3px solid ${(props) => props.theme.colors.accent};
+  --border: 3px solid ${(props) => props.theme.colors.ezraYellowOpacity(0.45)};
   text-align: center;
   margin: ${(props) => props.theme.spacing.xs};
 
@@ -123,7 +124,7 @@ const BookDisplay = () => {
               ${data.image.large} 615w,
               `}
               src={`${data.image.small}`}
-              alt="Elva dressed as a fairy"
+              alt={`${data.title} Book Cover`}
             />
           </CoverInfo>
           <BookDataContainer>
@@ -132,9 +133,9 @@ const BookDisplay = () => {
               <br /> pages
             </PageCount>
             <RatingContainer>
-              3.5 <Star size="1rem" />
+              {data.averageRating} <Star size={1} />
               <br />
-              18 reviews
+              {data.ratingsCount} reviews
             </RatingContainer>
             <PublishDate>
               Published <br />
@@ -171,36 +172,10 @@ export const Polygon = styled.polygon`
   fill: ${(props) => props.theme.colors.ezraYellow};
 `;
 
-export const StarComponent = ({ rating = 5 }) => {
-  const size = `${containerWidth / 5}px`;
-  return (
-    <StarContainer rating={rating}>
-      <StarCover>
-        {[1, 2, 3, 4, 5].map((x) => (
-          <svg
-            height={size}
-            width={size}
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 53.867 53.867"
-            xmlSpace="preserve"
-          >
-            <Polygon
-              points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-       10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
-            />
-          </svg>
-        ))}
-      </StarCover>
-    </StarContainer>
-  );
-};
-const Star = ({ size }: { size: string }) => (
+const Star = ({ size = 1 }) => (
   <svg
-    height={size}
-    width={size}
+    height={`${size}rem`}
+    width={`${size}rem`}
     version="1.1"
     id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
