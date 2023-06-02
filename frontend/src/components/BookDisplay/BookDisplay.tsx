@@ -113,7 +113,9 @@ const BookDisplay = () => {
     return (
       <BookContainer>
         <h2>
-          {!failed ? "Loading..." : "It looks like we encountered an error :("}
+          {!failed
+            ? "Loading..."
+            : "It looks like we encountered an error. Try checking your internet."}
         </h2>
       </BookContainer>
     );
