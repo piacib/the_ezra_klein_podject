@@ -34,6 +34,9 @@ export const BookContainer = styled.div`
   margin: auto;
   max-width: 100rem;
 `;
+export const LoadContainer = styled.div`
+  height: 100vh;
+`;
 export const BookDataChild = styled.p`
   padding: ${(props) => props.theme.spacing.xs};
   font-size: 1.25rem;
@@ -80,6 +83,7 @@ export const PublishDate = styled(BookDataChild)``;
 export const Cover = styled.img`
   width: 200px;
   height: 305.234px;
+  background: ${(props) => props.theme.colors.accent};
   align-self: center;
   @media ${devices.mobileL} {
     align-self: auto;
