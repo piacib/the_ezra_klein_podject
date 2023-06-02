@@ -1,14 +1,15 @@
 import { Container, Title } from "./Header.styles";
 import Books from "../BookStack/BookStack";
-import Paths from "../../router/paths";
+import paths from "../../router/paths";
 import { Nav, StyledLink } from "./Nav.styles";
 
 const Header = () => {
   return (
     <>
       <Nav>
-        <StyledLink to={Paths.home}>Home</StyledLink>
-        <StyledLink to={Paths.randombook}>Random Book</StyledLink>
+        <StyledLink to={paths.home}>Home</StyledLink>
+        <StyledLink to={paths.randombook}>Random Book</StyledLink>
+        <StyledLink to={paths.books}>Books</StyledLink>
       </Nav>
       <Container>
         <Books />
