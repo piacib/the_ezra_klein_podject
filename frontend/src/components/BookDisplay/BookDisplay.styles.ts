@@ -79,13 +79,16 @@ export const PublishDate = styled(BookDataChild)``;
 
 export const Cover = styled.img`
   width: 200px;
+  height: 305.234px;
   align-self: center;
   @media ${devices.mobileL} {
     align-self: auto;
     width: 250px;
+    height: 381.547px;
   }
   @media ${devices.tablet} {
     width: 400px;
+    height: 610px;
   }
 `;
 export const Subtitle = styled.h2`
