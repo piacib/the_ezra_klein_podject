@@ -5,7 +5,7 @@ export const CategoryLink = styled(Link)`
   text-decoration: none;
   padding: 1.25rem 2rem;
   border-radius: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border: 3px solid ${(props) => props.theme.colors.accent};
   margin: 1rem;
   :hover {
