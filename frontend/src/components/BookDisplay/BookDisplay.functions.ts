@@ -130,3 +130,7 @@ export const getBookById = (id: string) => {
   // BUILD GET BOOK BY ID FUNCTION
   return bookEntry.volumeInfo;
 };
+export const dateGenerator = (str: string) => {
+  const date = new Date(str);
+  return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
+};
