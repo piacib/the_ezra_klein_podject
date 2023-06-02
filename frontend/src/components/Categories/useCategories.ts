@@ -9,7 +9,7 @@ const useCategories = (categories: string[]) => {
       categorySplit.forEach((x) => categorySet.add(x.trim()));
     });
     setCategoryParsed(Array.from(categorySet));
-  });
+  }, []);
   return categoryParsed;
 };
 
