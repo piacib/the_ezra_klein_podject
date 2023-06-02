@@ -94,3 +94,24 @@ export const Subtitle = styled.h2`
 export const CoverData = styled.div`
   margin-bottom: ${(props) => props.theme.spacing.xs};
 `;
+
+const containerWidth = 250;
+export const StarCover = styled.div`
+  overflow: clip;
+  display: flex;
+  flex-wrap: nowrap;
+`;
+interface StarProp {
+  rating: number;
+}
+
+export const StarContainer = styled.div<StarProp>`
+  overflow: hidden;
+  width: ${(props) => (props.rating / 5) * 250}px;
+  ${StarCover} {
+    width: ${containerWidth}px;
+  }
+`;
+export const Polygon = styled.polygon`
+  fill: ${(props) => props.theme.colors.ezraYellow};
+`;
