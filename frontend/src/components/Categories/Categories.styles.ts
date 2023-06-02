@@ -9,7 +9,7 @@ export const CategoryLink = styled(Link)`
   border: 3px solid ${(props) => props.theme.colors.accent};
   margin: 1rem;
   :hover {
-    border: 2px solid ${(props) => props.theme.colors.ezraYellow};
+    border-color: ${(props) => props.theme.colors.ezraYellow};
     color: ${(props) => props.theme.colors.ezraYellow};
     background-color: ${(props) => props.theme.colors.accent};
   }
