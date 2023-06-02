@@ -15,11 +15,10 @@ import {
   Subtitle,
   CoverData,
   RatingContainer,
+  Polygon,
 } from "./BookDisplay.styles";
-const dateGenerator = (str: string) => {
-  const date = new Date(str);
-  return `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
-};
+import { dateGenerator } from "./BookDisplay.functions";
+
 const BookDisplay = () => {
   const data = useFetchBook();
   const [failed, setFailed] = useState(false);
@@ -28,15 +27,7 @@ const BookDisplay = () => {
     setTimeout(() => {
       setFailed(true);
     }, 5000);
-    return (
-      <BookContainer>
-        <h2>
-          {!failed
-            ? "Loading..."
-            : "It looks like we encountered an error. Try checking your internet."}
-        </h2>
-      </BookContainer>
-    );
+    return <BookContainer>{!failed ? <Loading /> : <Failed />}</BookContainer>;
   }
   return (
     <BookContainer>
@@ -80,26 +71,6 @@ const BookDisplay = () => {
 };
 
 export default BookDisplay;
-interface StarProp {
-  rating: number;
-}
-
-const containerWidth = 250;
-export const StarCover = styled.div`
-  overflow: clip;
-  display: flex;
-  flex-wrap: nowrap;
-`;
-export const StarContainer = styled.div<StarProp>`
-  overflow: hidden;
-  width: ${(props) => (props.rating / 5) * 250}px;
-  ${StarCover} {
-    width: ${containerWidth}px;
-  }
-`;
-export const Polygon = styled.polygon`
-  fill: ${(props) => props.theme.colors.ezraYellow};
-`;
 
 const Star = ({ size = 1 }) => (
   <svg
@@ -117,4 +88,8 @@ const Star = ({ size = 1 }) => (
        10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
     />
   </svg>
+);
+const Loading = () => <h2>Loading...</h2>;
+const Failed = () => (
+  <h2>It looks like we encountered an error. Try checking your internet.</h2>
 );
