@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import BookCarousel from "../BookCarousel/BookCarousel";
 import { useEffect } from "react";
-import Catagories from "../Categories/Catagories";
+import Categories from "../Categories/Categories";
 const categories = [
   "Fiction / Fantasy / Historical",
   "Fiction / Fantasy / Epic",
@@ -22,14 +22,14 @@ const idList = [
   "ZWRQEAAAQBAJ",
   "ZWRQEAAAQBAJ",
 ];
-const BooksCatagoriesDisplay = () => {
+const BooksCategoriesDisplay = () => {
   return (
     <>
       <BookCarousel title={"Popular"} books={idList} />
       <BookCarousel title={"Most Recent"} books={idList} />
-      <Catagories list={categories} />
+      <Categories list={categories} />
     </>
   );
 };
 
-export default BooksCatagoriesDisplay;
+export default BooksCategoriesDisplay;
