@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     min-height:1000px;
     margin: 0;
     padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   #root, body {
     background-color: ${(props) => props.theme.colors.background};
@@ -37,6 +37,18 @@ const GlobalStyle = createGlobalStyle`
   }
   @media ${devices.laptop} {
     font-size: 3rem;
+  }
+  }
+  h3 {
+    font-size: 1.5rem;
+  @media ${devices.mobileL} {
+    font-size: 1.25rem;
+  }
+  @media ${devices.tablet} {
+    font-size: 1.75rem;
+  }
+  @media ${devices.laptop} {
+    font-size: 2.5rem;
   }
   }
 `;
