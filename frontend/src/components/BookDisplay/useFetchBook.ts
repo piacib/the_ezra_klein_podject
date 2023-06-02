@@ -207,6 +207,7 @@ interface ApiResponse200<T> extends ApiResponse<T> {
   data: T;
   error: undefined;
 }
+export const NetworkError = 999;
 export function useFetch<T>(url: string): ApiResponse<T> | ApiResponse200<T> {
   const [status, setStatus] = useState<number>(0);
   const [data, setData] = useState<undefined | T>(undefined);
@@ -214,27 +215,33 @@ export function useFetch<T>(url: string): ApiResponse<T> | ApiResponse200<T> {
   const [loading, setLoading] = useState<boolean>(false);
   async function getAPIData() {
     setLoading(true);
-    const response = await fetch(url);
-    const json = await response.json();
-    console.log(response);
-    console.log(json);
-    if (response.ok) {
-      if (response.status === 200) {
-        setStatus(response.status);
-        const json200: T = json;
-        setData(json200);
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      if (response.ok) {
+        if (response.status === 200) {
+          setStatus(response.status);
+          const json200: T = json;
+          setData(json200);
+        } else {
+          setData(json);
+        }
       } else {
-        setData(json);
+        const tempError = new Error(
+          json.error.errors
+            ?.map((e: { message: string }) => e.message)
+            .join("\n") ?? "unknown"
+        );
+        setError(tempError);
       }
-    } else {
-      const tempError = new Error(
-        json.error.errors
-          ?.map((e: { message: string }) => e.message)
-          .join("\n") ?? "unknown"
-      );
-      setError(tempError);
+      setLoading(false);
+    } catch {
+      if (error === undefined) {
+        // Network error
+        setStatus(NetworkError);
+      }
+      console.log(error);
     }
-    setLoading(false);
   }
 
   useEffect(() => {

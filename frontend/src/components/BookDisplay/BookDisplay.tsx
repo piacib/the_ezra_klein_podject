@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetchBook from "./useFetchBook";
+import useFetchBook, { NetworkError } from "./useFetchBook";
 import styled, { css } from "styled-components";
 import Catagories from "../Categories/Catagories";
 import { devices } from "../../styles/devices";
@@ -104,7 +104,20 @@ const dateGenerator = (str: string) => {
 };
 const BookDisplay = () => {
   const data = useFetchBook();
+  const [failed, setFailed] = useState(false);
   console.log("bookdis", data);
+  if (!data) {
+    setTimeout(() => {
+      setFailed(true);
+    }, 5000);
+    return (
+      <BookContainer>
+        <h2>
+          {!failed ? "Loading..." : "It looks like we encountered an error :("}
+        </h2>
+      </BookContainer>
+    );
+  }
   return (
     <BookContainer>
       {data && (
