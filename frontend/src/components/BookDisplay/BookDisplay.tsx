@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetchBook from "./useFetchBook";
-import styled from "styled-components";
 import Categories from "../Categories/Categories";
 import {
   Title,
@@ -16,18 +15,28 @@ import {
   CoverData,
   RatingContainer,
   Polygon,
+  LoadContainer,
 } from "./BookDisplay.styles";
 import { dateGenerator } from "./BookDisplay.functions";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 const BookDisplay = () => {
   const data = useFetchBook();
   const [failed, setFailed] = useState(false);
   console.log("bookdis", data);
+  useEffect(() => {
+    if (data && failed) {
+      setFailed(false);
+    }
+    return () => setFailed(false);
+  }, [data, failed]);
   if (!data) {
     setTimeout(() => {
       setFailed(true);
     }, 5000);
-    return <BookContainer>{!failed ? <Loading /> : <Failed />}</BookContainer>;
+    return (
+      <LoadContainer>{!failed ? <LoadingScreen /> : <Failed />}</LoadContainer>
+    );
   }
   return (
     <BookContainer>
@@ -41,9 +50,9 @@ const BookDisplay = () => {
         </CoverData>
         <Cover
           srcSet={`
-              ${data.image.small} 300w, 
-              ${data.image.medium} 575w,
-              ${data.image.large} 615w,
+          ${data.image.small} 300w, 
+          ${data.image.medium} 575w,
+          ${data.image.large} 615w,
               `}
           src={`${data.image.small}`}
           alt={`${data.title} Book Cover`}
@@ -89,7 +98,6 @@ const Star = ({ size = 1 }) => (
     />
   </svg>
 );
-const Loading = () => <h2>Loading...</h2>;
 const Failed = () => (
   <h2>It looks like we encountered an error. Try checking your internet.</h2>
 );
