@@ -1,4 +1,3 @@
-import React from "react";
 import LoadingSVG from "./loading.svg";
 import styled, { keyframes } from "styled-components";
 const spinning = keyframes`
