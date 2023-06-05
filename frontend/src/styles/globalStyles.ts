@@ -13,9 +13,15 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.background};
   }
   p,a, h1,h2,h3,h4 {
-    color: ${(props) => props.theme.colors.accent}
+    color: ${(props) => props.theme.colors.accent};
+    font-family: "Open Sans"
+  }
+  h1, h2{
+
+    font-family: "Dekko", cursive;
   }
   h1 {
+
     font-size: 2rem;
   @media ${devices.mobileL} {
     font-size: 2.5rem;
