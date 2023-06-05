@@ -1,5 +1,6 @@
 import useCategories from "./useCategories";
 import {
+  BubbleLink,
   CategoriesContainer,
   CategoryLink,
   LinkWrapper,
@@ -13,11 +14,9 @@ const Categories = ({ list }: Props) => {
   return (
     <CategoriesContainer>
       {categoryList.map((x) => (
-        <LinkWrapper>
-          <CategoryLink to={paths.categoriesGenerator(x)} key={x}>
-            {x}
-          </CategoryLink>
-        </LinkWrapper>
+        <BubbleLink to={paths.categoriesGenerator(x)} key={x}>
+          {x}
+        </BubbleLink>
       ))}
     </CategoriesContainer>
   );
