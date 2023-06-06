@@ -11,7 +11,6 @@ import {
   CoverInfo,
   PublishDate,
   Cover,
-  Subtitle,
   CoverData,
   RatingContainer,
   Polygon,
@@ -48,7 +47,6 @@ const BookDisplay = () => {
           <Title>
             {data.title} <br />
           </Title>
-          <Subtitle>{data.subtitle}</Subtitle>
           <Authors>by {data.authors}</Authors>
         </CoverData>
         <Cover
@@ -87,9 +85,7 @@ const BookDisplay = () => {
       <Description dangerouslySetInnerHTML={{ __html: data.description }} />
       <h3>
         Recomended by:
-        {alldata[data.title]?.guestRecomendation
-          ? alldata[data.title].guestRecomendation.join(", ")
-          : ""}
+        {alldata[data.title].guestRecomendation.join(", ")}
       </h3>
       {data.categories && <Categories list={data.categories} />}
     </BookContainer>
