@@ -6,6 +6,7 @@ const paths = {
   bookpage: "book/:id",
   bookpageGenerator: (id: string) => `/book/${id}`,
   categories: "category/:id",
+  allcategories: "category",
   categoriesGenerator: (id: string) => `/category/${id}`,
 };
 export default paths;
