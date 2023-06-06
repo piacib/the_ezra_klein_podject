@@ -10,6 +10,7 @@ const Header = () => {
         <StyledLink to={paths.home}>Home</StyledLink>
         <StyledLink to={paths.randombook}>Random Book</StyledLink>
         <StyledLink to={paths.books}>Books</StyledLink>
+        <StyledLink to={paths.allcategories}>Categories</StyledLink>
       </Nav>
       <Container>
         <Books />

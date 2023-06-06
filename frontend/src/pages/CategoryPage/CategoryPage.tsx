@@ -1,11 +1,12 @@
 import React from "react";
 import CategoryDisplay from "../../components/CategoryDisplay/CategoryDisplay";
+import { Page } from "../Page.styles";
 
 const CategoryPage = () => {
   return (
-    <div>
+    <Page>
       <CategoryDisplay />
-    </div>
+    </Page>
   );
 };
 
