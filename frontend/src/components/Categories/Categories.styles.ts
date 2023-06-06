@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const CategoryLink = styled(Link)`
   text-decoration: none;
@@ -57,9 +57,7 @@ export const CategoriesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-
-export const BubbleLink = styled(Link)`
-  /* cap the width */
+export const bubbleCSS = css`
   max-width: 500px;
   margin: 2rem;
   text-align: center;
@@ -76,4 +74,7 @@ export const BubbleLink = styled(Link)`
     ${(props) => props.theme.colors.ezraYellow};
   background-size: 13px, 100%;
   font-weight: 700;
+`;
+export const BubbleLink = styled(Link)`
+  ${bubbleCSS}
 `;
