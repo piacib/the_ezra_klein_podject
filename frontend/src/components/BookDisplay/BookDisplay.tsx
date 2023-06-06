@@ -39,6 +39,8 @@ const BookDisplay = () => {
       <LoadContainer>{!failed ? <LoadingScreen /> : <Failed />}</LoadContainer>
     );
   }
+  console.log("data", alldata[data.title]);
+
   return (
     <BookContainer>
       <CoverInfo>
@@ -84,7 +86,10 @@ const BookDisplay = () => {
       </BookDataContainer>
       <Description dangerouslySetInnerHTML={{ __html: data.description }} />
       <h3>
-        Recomended by:{alldata[data.title].guestRecomendation.join(", ")}
+        Recomended by:
+        {alldata[data.title]?.guestRecomendation
+          ? alldata[data.title].guestRecomendation.join(", ")
+          : ""}
       </h3>
       {data.categories && <Categories list={data.categories} />}
     </BookContainer>
