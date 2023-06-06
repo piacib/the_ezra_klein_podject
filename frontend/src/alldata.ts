@@ -1,4 +1,4 @@
-type book = {
+export type book = {
   episodeTitle: string[];
   guestRecomendation: string[];
   author?: string;
@@ -12,6 +12,575 @@ type book = {
     extraLarge?: string;
   };
   categories?: string[];
+};
+export const episodeDateObj: { [k: string]: { date: Date | null } } = {
+  "Trump’s Legal Jeopardy and America’s Political Crossroads": {
+    date: new Date("2023-03-28T07:00:00.000Z"),
+  },
+  "A Radical Way of Thinking About Money": {
+    date: new Date("2023-03-24T07:00:00.000Z"),
+  },
+  "A.I. Is About to Get Much Weirder. Here’s What to Watch For.": {
+    date: new Date("2023-03-21T07:00:00.000Z"),
+  },
+  "Why Silicon Valley Bank Collapsed — And What Comes Next": {
+    date: new Date("2023-03-16T07:00:00.000Z"),
+  },
+  "How China Went From Economic Superstar to Faltering Giant": {
+    date: new Date("2023-03-14T07:00:00.000Z"),
+  },
+  "The Men — and Boys — Are Not Alright": {
+    date: new Date("2023-03-10T08:00:00.000Z"),
+  },
+  "If You Read the G.O.P.’s Anti-Trans Policies, You’ll See What It Really Wants":
+    {
+      date: new Date("2023-03-07T08:00:00.000Z"),
+    },
+  "What a Poetic Mind Can Teach Us About How to Live": {
+    date: new Date("2023-03-03T08:00:00.000Z"),
+  },
+  "Our Brains Weren’t Designed for This Kind of Food": {
+    date: new Date("2023-02-28T08:00:00.000Z"),
+  },
+  "Is A.I. Actually Creative? Are We?": {
+    date: new Date("2023-02-24T08:00:00.000Z"),
+  },
+  "A Surprising Theory for Understanding — and Healing — Pain": {
+    date: new Date("2023-02-21T08:00:00.000Z"),
+  },
+  "The Inflation Story Has Changed Significantly. Paul Krugman Breaks It Down.":
+    {
+      date: new Date("2023-02-17T08:00:00.000Z"),
+    },
+  "How the $500 Billion Attention Industry Really Works": {
+    date: new Date("2023-02-14T08:00:00.000Z"),
+  },
+  "The Tao of Rick Rubin": {
+    date: new Date("2023-02-10T08:00:00.000Z"),
+  },
+  "How Liberals — Yes, Liberals — Are Hobbling Government": {
+    date: new Date("2023-02-07T08:00:00.000Z"),
+  },
+  "Is This How a Cold War With China Begins?": {
+    date: new Date("2023-01-27T08:00:00.000Z"),
+  },
+  "There’s Been a Revolution in How China Is Governed": {
+    date: new Date("2023-01-24T08:00:00.000Z"),
+  },
+  "How Right-Wing Media Ate the Republican Party": {
+    date: new Date("2023-01-20T08:00:00.000Z"),
+  },
+  "A Revelatory Tour of Martin Luther King Jr.’s Forgotten Teachings": {
+    date: new Date("2023-01-16T08:00:00.000Z"),
+  },
+  "A Guide to the ‘Legal Fictions’ That Create Wealth, Inequality and Economic Crises":
+    {
+      date: new Date("2023-01-13T08:00:00.000Z"),
+    },
+  "Dan Savage on Polyamory, Chosen Family and Better Sex": {
+    date: new Date("2023-01-10T08:00:00.000Z"),
+  },
+  "A Skeptical Take on the A.I. Revolution": {
+    date: new Date("2023-01-06T08:00:00.000Z"),
+  },
+  "Sabbath and the Art of Rest": {
+    date: new Date("2023-01-03T08:00:00.000Z"),
+  },
+  "What I’m Thinking About at the End of 2022": {
+    date: new Date("2022-12-16T08:00:00.000Z"),
+  },
+  "Time Is Way Weirder Than You Think": {
+    date: new Date("2022-12-13T08:00:00.000Z"),
+  },
+  "Three Signals We’ve Entered a New Economic Era": {
+    date: new Date("2022-12-09T08:00:00.000Z"),
+  },
+  "There’s Been a Massive Change in Where American Policy Gets Made": {
+    date: new Date("2022-12-06T08:00:00.000Z"),
+  },
+  "A Conservative’s Take on the Chaotic State of the Republican Party": {
+    date: new Date("2022-12-02T08:00:00.000Z"),
+  },
+  "The Hidden Costs of Cheap Meat": {
+    date: new Date("2022-11-29T08:00:00.000Z"),
+  },
+  "This Is Your Brain on ‘Deep Reading.’ It’s Pretty Magnificent.": {
+    date: new Date("2022-11-22T08:00:00.000Z"),
+  },
+  "Bill McKibben on the Power That Could Save the Planet": {
+    date: new Date("2022-11-15T08:00:00.000Z"),
+  },
+  "George Saunders on the ‘Braindead Megaphone’ That Makes Our Politics So Awful":
+    {
+      date: new Date("2022-11-08T08:00:00.000Z"),
+    },
+  "Inflation Does More Than Raise Prices. It Destroys Governments.": {
+    date: new Date("2022-11-04T07:00:00.000Z"),
+  },
+  "A Powerful Theory of Why the Far Right Is Thriving Across the Globe": {
+    date: new Date("2022-11-01T07:00:00.000Z"),
+  },
+  "These Political Scientists Surveyed 500,000 Voters. Here Are Their Unnerving Conclusions.":
+    {
+      date: new Date("2022-10-28T07:00:00.000Z"),
+    },
+  "A Step-by-Step Guide to Becoming a Trump Enabler": {
+    date: new Date("2022-10-25T07:00:00.000Z"),
+  },
+  "There’s Been a ‘Regime Change’ in How Democrats Think About Elections": {
+    date: new Date("2022-10-21T07:00:00.000Z"),
+  },
+  "A Legendary World-Builder on Multiverses, Revolution and the ‘Souls’ of Cities":
+    {
+      date: new Date("2022-10-18T07:00:00.000Z"),
+    },
+  "Rachel Maddow Looks Back on a Wild 14 Years": {
+    date: new Date("2022-10-14T07:00:00.000Z"),
+  },
+  "How the Fed Is ‘Shaking the Entire System’": {
+    date: new Date("2022-10-07T07:00:00.000Z"),
+  },
+  "Interrogating the Stories We Tell About Our Minds": {
+    date: new Date("2022-10-04T07:00:00.000Z"),
+  },
+  "Ethereum’s Founder on What Crypto Can — and Can’t — Do": {
+    date: new Date("2022-09-30T07:00:00.000Z"),
+  },
+  "We Know Shockingly Little About What Makes Humanity Prosper": {
+    date: new Date("2022-09-27T07:00:00.000Z"),
+  },
+  "Why Russia Is Losing the War in Ukraine": {
+    date: new Date("2022-09-23T07:00:00.000Z"),
+  },
+  "The Single Best Guide to Decarbonization I’ve Heard": {
+    date: new Date("2022-09-20T07:00:00.000Z"),
+  },
+  "Now All Biden Has to Do Is Build It": {
+    date: new Date("2022-09-16T07:00:00.000Z"),
+  },
+  "We Build Civilizations on Status. But We Barely Understand It.": {
+    date: new Date("2022-09-13T07:00:00.000Z"),
+  },
+  "The Subtle Art of Appreciating ‘Difficult Beauty’": {
+    date: new Date("2022-09-06T07:00:00.000Z"),
+  },
+  "A Grammy-Nominated Singer Performs and Explores Music’s Deep Power Over Us":
+    {
+      date: new Date("2022-08-30T07:00:00.000Z"),
+    },
+  "Why the Evangelical Movement Is in ‘Disarray’ After Dobbs": {
+    date: new Date("2022-08-23T07:00:00.000Z"),
+  },
+  "Is the Remote Work Revolution Flopping, Succeeding or Both?": {
+    date: new Date("2022-08-16T07:00:00.000Z"),
+  },
+  "How Do We Face Loss With Empathy?": {
+    date: new Date("2022-08-12T07:00:00.000Z"),
+  },
+  "Three Sentences That Could Change the World — and Your Life": {
+    date: new Date("2022-08-09T07:00:00.000Z"),
+  },
+  "Gender Is Complicated for All of Us. Let’s Talk About It.": {
+    date: new Date("2022-08-05T07:00:00.000Z"),
+  },
+  "How We Communicate Will Decide Whether Democracy Lives or Dies": {
+    date: new Date("2022-07-26T07:00:00.000Z"),
+  },
+  "A Top Mental Health Expert on Where America Went Wrong": {
+    date: new Date("2022-07-22T07:00:00.000Z"),
+  },
+  "Why Housing Is So Expensive — Particularly in Blue States": {
+    date: new Date("2022-07-19T07:00:00.000Z"),
+  },
+  "A Weird, Wonderful Conversation With Kim Stanley Robinson": {
+    date: new Date("2022-07-15T07:00:00.000Z"),
+  },
+  "Michelle Goldberg Grapples With Feminism After Roe": {
+    date: new Date("2022-07-08T07:00:00.000Z"),
+  },
+  "Liberals Need a Clearer Vision of the Constitution. Here’s What It Could Look Like.":
+    {
+      date: new Date("2022-07-05T07:00:00.000Z"),
+    },
+  "The Single Best Guide I’ve Heard to the Supreme Court’s Rightward Shift": {
+    date: new Date("2022-07-01T07:00:00.000Z"),
+  },
+  "The Dobbs Decision Isn’t Just About Abortion. It’s About Power.": {
+    date: new Date("2022-06-26T07:00:00.000Z"),
+  },
+  "Jan. 6 Has Surfaced America’s Disdain for Democracy": {
+    date: new Date("2022-06-24T07:00:00.000Z"),
+  },
+  "Two Years Later, We Still Don’t Understand Long Covid. Why?": {
+    date: new Date("2022-06-21T07:00:00.000Z"),
+  },
+  "The Stock Market Is Plummeting. Welcome to the End of the ‘Everything Bubble.’":
+    {
+      date: new Date("2022-06-17T07:00:00.000Z"),
+    },
+  "Is Climate Change a Reason to Avoid Having Children? and Other Listener Questions Answered":
+    {
+      date: new Date("2022-06-14T07:00:00.000Z"),
+    },
+  "Why One of America’s Leading Socialists Is Worried About His Movement": {
+    date: new Date("2022-06-10T07:00:00.000Z"),
+  },
+  "Thomas Piketty’s Case for ‘Participatory Socialism’": {
+    date: new Date("2022-06-07T07:00:00.000Z"),
+  },
+  "Why Reihan Salam Thinks ‘Antiracialism’ Could Break the Democrats": {
+    date: new Date("2022-06-03T07:00:00.000Z"),
+  },
+  "A Debate Over What Roe Did — and What Losing It Would Mean": {
+    date: new Date("2022-05-31T07:00:00.000Z"),
+  },
+  "A Conversation With Ada Limón, in Six Poems": {
+    date: new Date("2022-05-24T07:00:00.000Z"),
+  },
+  "The Ethics of Abortion": {
+    date: new Date("2022-05-20T07:00:00.000Z"),
+  },
+  "Anne Applebaum on What Liberals Misunderstand About Authoritarianism": {
+    date: new Date("2022-05-17T07:00:00.000Z"),
+  },
+  "What Does the ‘Post-Liberal Right’ Actually Want?": {
+    date: new Date("2022-05-13T07:00:00.000Z"),
+  },
+  "Donald Trump Didn’t Hijack the G.O.P. He Understood It.": {
+    date: new Date("2022-05-06T07:00:00.000Z"),
+  },
+  "Elon Musk Might Break Twitter. Maybe That’s a Good Thing": {
+    date: null,
+  },
+  "Putin May Not Like How He’s Changed Europe": {
+    date: new Date("2022-04-26T07:00:00.000Z"),
+  },
+  "Emily St. John Mandel on Time Travel, Parenting and the Apocalypse": {
+    date: new Date("2022-04-22T07:00:00.000Z"),
+  },
+  "Can Democrats Turn Their 2022 Around?": {
+    date: new Date("2022-04-19T07:00:00.000Z"),
+  },
+  "A Ukrainian Philsopoher on What Putin Never Understood About Ukraine": {
+    date: new Date("2022-04-12T07:00:00.000Z"),
+  },
+  "Fiona Hill on Whether Ukraine Can Win — and What Happens if Russia Loses (April 8, 2022)":
+    {
+      date: null,
+    },
+  "A Viral Case Against Crypto, Explored": {
+    date: new Date("2022-04-05T07:00:00.000Z"),
+  },
+  "Sanctioning Russia Is a Form of War. We Need to Treat It Like One.": {
+    date: new Date("2022-04-01T07:00:00.000Z"),
+  },
+  "I Keep Hoping Larry Summers Is Wrong. What if He’s Not?": {
+    date: new Date("2022-03-29T07:00:00.000Z"),
+  },
+  "Margaret Atwood on ‘The Handmaid’s Tale,’ Totalitarianism and U.F.O.s": {
+    date: new Date("2022-03-25T07:00:00.000Z"),
+  },
+  "How Energy Markets Are Shaping Putin’s Invasion — and the World": {
+    date: new Date("2022-03-22T07:00:00.000Z"),
+  },
+  "A Realist Take on How the Russia-Ukraine War Could End": {
+    date: new Date("2022-03-18T07:00:00.000Z"),
+  },
+  "Timothy Snyder on the Myths That Blinded the West to Putin’s Plans": {
+    date: new Date("2022-03-15T07:00:00.000Z"),
+  },
+  "Putin Is ‘Profoundly Anti-Modern.’ Masha Gessen Explains What That Means for the World":
+    {
+      date: new Date("2022-03-11T08:00:00.000Z"),
+    },
+  "Fiona Hill on the War Putin Is Really Fighting": {
+    date: new Date("2022-03-08T08:00:00.000Z"),
+  },
+  "Fareed Zakaria Has a Better Way to Handle Russia —and China (March 4, 2022)":
+    {
+      date: null,
+    },
+  "Can the West Stop Russia by Strangling Its Economy?": {
+    date: new Date("2022-03-01T08:00:00.000Z"),
+  },
+  "A Critique of Government That Progressives — Myself Included — Need to Hear":
+    {
+      date: new Date("2022-02-18T08:00:00.000Z"),
+    },
+  "What if We Respected Toddlers as Whole People?": {
+    date: new Date("2022-02-15T08:00:00.000Z"),
+  },
+  "It’s Not Your Fault You Can’t Pay Attention. Here’s Why.": {
+    date: new Date("2022-02-11T08:00:00.000Z"),
+  },
+  "Why (Most) Economists Got This Economy So Wrong": {
+    date: new Date("2022-02-08T08:00:00.000Z"),
+  },
+  "Let’s Talk About How Truly Bizarre Our Supreme Court Is": {
+    date: new Date("2022-02-04T08:00:00.000Z"),
+  },
+  "Democrats Chase Shiny Objects. Here’s How They Can Build Real Power.": {
+    date: new Date("2022-02-01T08:00:00.000Z"),
+  },
+  "What We Gain by Enchanting the Objects in Our Lives": {
+    date: new Date("2022-01-25T08:00:00.000Z"),
+  },
+  "What Biden’s Chief of Staff Has Learned, One Year In": {
+    date: new Date("2022-01-21T08:00:00.000Z"),
+  },
+  "The Pandemic Lessons We Clearly Haven’t Learned": {
+    date: new Date("2022-01-18T08:00:00.000Z"),
+  },
+  "Chris Hayes on How Biden Can Have a Better 2022": {
+    date: new Date("2022-01-11T08:00:00.000Z"),
+  },
+  "Timeless Wisdom for Leading a Life of Love, Friendship and Learning": {
+    date: new Date("2021-12-14T08:00:00.000Z"),
+  },
+  "Every 8 Seconds, an American Turns 65. How Do We Care for Everyone?": {
+    date: new Date("2021-12-07T08:00:00.000Z"),
+  },
+  "Predicting the Future Is Possible. These ‘Superforecasters’ Know How.": {
+    date: new Date("2021-12-03T08:00:00.000Z"),
+  },
+  "Why Is Murder Spiking? And Can Cities Address It Without Police?": {
+    date: new Date("2021-11-23T08:00:00.000Z"),
+  },
+  "The Case Against Loving Your Job": {
+    date: new Date("2021-11-19T08:00:00.000Z"),
+  },
+  "How Far-Right Extremism Invaded Mainstream Politics": {
+    date: new Date("2021-11-16T08:00:00.000Z"),
+  },
+  "The Mainstream Media Has a Republican Party Problem": {
+    date: new Date("2021-11-12T08:00:00.000Z"),
+  },
+  "Two Acclaimed Writers on the Art of Revising Your Life": {
+    date: new Date("2021-11-09T08:00:00.000Z"),
+  },
+  "The Life-Altering Differences Between White and Black Debt": {
+    date: new Date("2021-11-02T07:00:00.000Z"),
+  },
+  "Why This Conservative Wants a More Radical Republican Party": {
+    date: new Date("2021-10-29T07:00:00.000Z"),
+  },
+  "What Living ‘At the Edge of Medical Knowledge’ Reveals about American Healthcare":
+    {
+      date: new Date("2021-10-26T07:00:00.000Z"),
+    },
+  "What Keeping American Democracy Alive Looks Like": {
+    date: new Date("2021-10-22T07:00:00.000Z"),
+  },
+  "Why Does It Have to Be Slaveholders That We Unite Around?": {
+    date: null,
+  },
+  "A Crypto Optimist Meets a Crypto Skeptic": {
+    date: new Date("2021-10-15T07:00:00.000Z"),
+  },
+  "Lessons on Living Well, From Nick Offerman": {
+    date: new Date("2021-10-12T07:00:00.000Z"),
+  },
+  "What if We’ll Never Truly Be Free?": {
+    date: new Date("2021-10-08T07:00:00.000Z"),
+  },
+  "Warning: This Episode Gets Really Weird About How Much Good You Can Do": {
+    date: new Date("2021-10-05T07:00:00.000Z"),
+  },
+  "‘We’ve Become Too Complicated’: Where Eric Adams Thinks Democrats Went Wrong":
+    {
+      date: new Date("2021-10-01T07:00:00.000Z"),
+    },
+  "Richard Powers on What We Can Learn from Trees": {
+    date: new Date("2021-09-28T07:00:00.000Z"),
+  },
+  "We’re on the Precipice of a Post-Roe World": {
+    date: new Date("2021-09-21T07:00:00.000Z"),
+  },
+  "Covid Showed Us What Keynes Always Knew": {
+    date: new Date("2021-09-17T07:00:00.000Z"),
+  },
+  "How Colson Whitehead Writes About Our ‘Big Wild Country’": {
+    date: new Date("2021-09-14T07:00:00.000Z"),
+  },
+  "Can We Change Our Sexual Desires? Should We?": {
+    date: new Date("2021-09-07T07:00:00.000Z"),
+  },
+  "This Isn’t Your Grandpa’s Joe Biden": {
+    date: new Date("2021-09-03T07:00:00.000Z"),
+  },
+  "My Reading Habits, Explained, and Other Questions You Asked": {
+    date: new Date("2021-08-31T07:00:00.000Z"),
+  },
+  "The Foreign Policy Conversation Washington Doesn’t Want to Have": {
+    date: new Date("2021-08-27T07:00:00.000Z"),
+  },
+  "This Conversation Will Change How You Think About Trauma": {
+    date: new Date("2021-08-24T07:00:00.000Z"),
+  },
+  "How Identity Politics Took Over the Republican Party": {
+    date: new Date("2021-08-13T07:00:00.000Z"),
+  },
+  "What Trump Understood About the War on Terror That Others Missed": {
+    date: new Date("2021-08-10T07:00:00.000Z"),
+  },
+  "The Good and Bad News About the Delta Variant": {
+    date: new Date("2021-08-06T07:00:00.000Z"),
+  },
+  "This Conversation Changed the Way I Interact With Technology": {
+    date: new Date("2021-08-03T07:00:00.000Z"),
+  },
+  "What’s Really Behind the 1619 Backlash?": {
+    date: new Date("2021-07-30T07:00:00.000Z"),
+  },
+  "Ross Douthat Has Been ‘Radicalized a Little Bit, Too’": {
+    date: new Date("2021-07-27T07:00:00.000Z"),
+  },
+  "How Blue Cities Became So Outrageously Affordable": {
+    date: new Date("2021-07-23T07:00:00.000Z"),
+  },
+  "This Conversation Will Change How You Think About Thinking": {
+    date: new Date("2021-07-20T07:00:00.000Z"),
+  },
+  "Ibram X. Kendi on What Conservatives—and Liberals—Get Wrong About Antiracism":
+    {
+      date: new Date("2021-07-16T07:00:00.000Z"),
+    },
+  "How Octopuses Upend What We Know About Ourselves": {
+    date: new Date("2021-07-13T07:00:00.000Z"),
+  },
+  "Critical Race Theory, Comic Books and the Power of Public Schools": {
+    date: new Date("2021-07-09T07:00:00.000Z"),
+  },
+  "Wilco’s Jeff Tweedy Wants You to Be Bad at Something. It’s for Your Own Good.":
+    {
+      date: new Date("2021-07-02T07:00:00.000Z"),
+    },
+  "Why Do We Work So Damn Much?": {
+    date: new Date("2021-06-29T07:00:00.000Z"),
+  },
+  "Republicans Are Setting Off a Doom Loop for Democracy": {
+    date: new Date("2021-06-25T07:00:00.000Z"),
+  },
+  "Sarah Schulman’s Radical Approach to Conflict, Communication and Change": {
+    date: new Date("2021-06-22T07:00:00.000Z"),
+  },
+  "Welcome to the ‘Take This Job and Shove It’ Economy": {
+    date: new Date("2021-06-18T07:00:00.000Z"),
+  },
+  "The Freeing of the American Mind": {
+    date: new Date("2021-06-15T07:00:00.000Z"),
+  },
+  "Sam Altman on the A.I. Revolution, Trillionaires and the Future of Political Power":
+    {
+      date: new Date("2021-06-11T07:00:00.000Z"),
+    },
+  "Employers Are Begging for Workers. Maybe That’s a Good Thing.": {
+    date: new Date("2021-06-08T07:00:00.000Z"),
+  },
+  "If ‘All Models Are Wrong,’ Why Do We Give Them So Much Power?": {
+    date: new Date("2021-06-04T07:00:00.000Z"),
+  },
+  "Obama Explains How America Went From ‘Yes We Can’ to ‘MAGA’": {
+    date: new Date("2021-06-01T07:00:00.000Z"),
+  },
+  "Violent Crime Is Spiking. Do Liberals Have an Answer?": {
+    date: new Date("2021-05-21T07:00:00.000Z"),
+  },
+  "The Spectacle of the G.O.P.’s Shrinking Tent": {
+    date: new Date("2021-05-18T07:00:00.000Z"),
+  },
+  "Status Games, Polyamory and the Merits of Meritocracy": {
+    date: new Date("2021-05-14T07:00:00.000Z"),
+  },
+  "Michael Lewis Is Asking the Right Question": {
+    date: new Date("2021-05-11T07:00:00.000Z"),
+  },
+  "Elizabeth Warren on What We Get Wrong About Inequality": {
+    date: new Date("2021-05-07T07:00:00.000Z"),
+  },
+  "How to Have Better Conversations About Hard Things": {
+    date: new Date("2021-05-04T07:00:00.000Z"),
+  },
+  "How Chuck Schumer Plans to Win Over Trump Voters": {
+    date: new Date("2021-04-30T07:00:00.000Z"),
+  },
+  "Shame, Safety and Moving Beyond Cancel Culture": {
+    date: new Date("2021-04-27T07:00:00.000Z"),
+  },
+  "Noam Chomsky on Anarchism, Human Nature and Joe Biden": {
+    date: new Date("2021-04-23T07:00:00.000Z"),
+  },
+  "That Anxiety You’re Feeling? It’s a Habit You Can Unlearn.": {
+    date: new Date("2021-04-20T07:00:00.000Z"),
+  },
+  "Why Adults Lose the ‘Beginner’s Mind’": {
+    date: new Date("2021-04-16T07:00:00.000Z"),
+  },
+  "Your Success Probably Didn’t Come From Merit Alone": {
+    date: new Date("2021-04-13T07:00:00.000Z"),
+  },
+  "Did the Boomers Ruin America? A Debate.": {
+    date: new Date("2021-04-06T07:00:00.000Z"),
+  },
+  "Humanity’s Awesome, Terrifying Takeover of Evolution": {
+    date: new Date("2021-04-02T07:00:00.000Z"),
+  },
+  "The Author Behind ‘Arrival’ Doesn’t Fear A.I. ‘Look at How We Treat Animals.’":
+    {
+      date: new Date("2021-03-30T07:00:00.000Z"),
+    },
+  "A Top G.O.P. Pollster on Trump 2024, QAnon and What Republicans Really Want":
+    {
+      date: new Date("2021-03-26T07:00:00.000Z"),
+    },
+  "Andrew Cuomo and the Performance of Power": {
+    date: new Date("2021-03-19T07:00:00.000Z"),
+  },
+  "Mark Bittman Cooked Everything. Now He Wants to Change Everything.": {
+    date: new Date("2021-03-16T07:00:00.000Z"),
+  },
+  "How America’s Covid-19 Nightmare Ends": {
+    date: new Date("2021-03-12T08:00:00.000Z"),
+  },
+  "What Does Toxic Stress Do to Children?": {
+    date: new Date("2021-03-09T08:00:00.000Z"),
+  },
+  "Stop. Breathe. We Can’t Keep Working Like This.": {
+    date: new Date("2021-03-05T08:00:00.000Z"),
+  },
+  "What a More Responsible Republican Party Would Look Like": {
+    date: new Date("2021-03-02T08:00:00.000Z"),
+  },
+  "The Texas Crisis Could Become Everyone’s Crisis": {
+    date: new Date("2021-02-26T08:00:00.000Z"),
+  },
+  "A Radical Proposal for True Democracy": {
+    date: new Date("2021-02-23T08:00:00.000Z"),
+  },
+  "What It Means to Be Kind in a Cruel World": {
+    date: new Date("2021-02-19T08:00:00.000Z"),
+  },
+  "What ‘Drained-Pool’ Politics Costs America": {
+    date: new Date("2021-02-16T08:00:00.000Z"),
+  },
+  "The Senate Is Making a Mockery of Itself": {
+    date: new Date("2021-02-12T08:00:00.000Z"),
+  },
+  "Should We Dim the Sun? Will We Even Have a Choice?": {
+    date: new Date("2021-02-09T08:00:00.000Z"),
+  },
+  "An Appalled Republican Considers the Future of the G.O.P.": {
+    date: new Date("2021-02-05T08:00:00.000Z"),
+  },
+  "To Understand This Era, You Need to Think in Systems": {
+    date: new Date("2021-02-02T08:00:00.000Z"),
+  },
+  "What’s Happening to Our Economy Is Like a Natural Disaster": {
+    date: new Date("2021-01-29T08:00:00.000Z"),
+  },
+  "The Man With the Plan to Beat the Pandemic": {
+    date: new Date("2021-01-26T08:00:00.000Z"),
+  },
 };
 export const alldata: { [k in string]: book } = {
   "1940": {
