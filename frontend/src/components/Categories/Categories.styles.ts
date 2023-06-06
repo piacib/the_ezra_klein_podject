@@ -66,6 +66,7 @@ const comicBackground = css`
 `;
 export const bubbleCSS = css`
   max-width: 500px;
+  height: fit-content;
   margin: 2rem;
   text-align: center;
   font-family: "Dekko", cursive;
