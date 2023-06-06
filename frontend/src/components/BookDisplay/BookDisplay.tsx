@@ -19,6 +19,7 @@ import {
 } from "./BookDisplay.styles";
 import { dateGenerator } from "./BookDisplay.functions";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import { alldata } from "../../alldata";
 
 const BookDisplay = () => {
   const data = useFetchBook();
@@ -82,7 +83,10 @@ const BookDisplay = () => {
         </PublishDate>
       </BookDataContainer>
       <Description dangerouslySetInnerHTML={{ __html: data.description }} />
-      <Categories list={data.categories} />
+      <h3>
+        Recomended by:{alldata[data.title].guestRecomendation.join(", ")}
+      </h3>
+      {data.categories && <Categories list={data.categories} />}
     </BookContainer>
   );
 };
