@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { idTitlePairs } from "../../alldata";
 const bookEntry = {
   kind: "books#volume",
   id: "ZWRQEAAAQBAJ",
@@ -139,7 +140,7 @@ const googleBookAPIGenerator = (id: string) => {
 };
 interface BookData {
   title: string;
-  subtitle: string;
+  // subtitle: string;
   authors: string[];
   averageRating?: number;
   ratingsCount?: number;
@@ -158,6 +159,7 @@ interface BookData {
 }
 const useFetchBook = () => {
   const { id } = useParams();
+
   const { status, data, error, loading } = useFetch<GoogleBookAPIResponse>(
     googleBookAPIGenerator(id ? id : "")
   );
@@ -167,10 +169,9 @@ const useFetchBook = () => {
     if (!id) {
       return;
     }
+    const title = idTitlePairs[id];
     if (data !== undefined) {
       const {
-        title,
-        subtitle,
         authors,
         averageRating,
         ratingsCount,
@@ -182,7 +183,6 @@ const useFetchBook = () => {
       } = data.volumeInfo;
       setBookData({
         title,
-        subtitle,
         authors,
         averageRating,
         ratingsCount,
