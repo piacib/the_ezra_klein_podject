@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 import { devices, sizesRem } from "../../styles/devices";
+import { bubbleCSS } from "../Categories/Categories.styles";
+import { Link } from "react-router-dom";
 
 export const TableElement = styled.table`
   margin-top: ${(props) => props.theme.spacing.l};
@@ -18,7 +20,18 @@ export const TableCaption = styled.caption`
     font-size: 3rem;
   }
 `;
-
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  button {
+    ${bubbleCSS}
+  }
+  button:last-child {
+    box-shadow: 8px 7px 0px 0px ${(props) => props.theme.colors.accent};
+  }
+`;
 export const TableHead = styled.tr`
   background-color: ${(props) => props.theme.colors.ezraYellow};
 `;
@@ -111,7 +124,7 @@ export const BookCover = styled.img`
   margin: 0 auto;
   border: 1px solid black;
 `;
-export const BookCoverContainer = styled.div`
+export const BookCoverContainer = styled(Link)`
   width: 100%;
   display: grid;
   place-items: center;
@@ -119,7 +132,12 @@ export const BookCoverContainer = styled.div`
 export const RatingCell = styled(TableCell)``;
 export const BookCoverCell = styled(TableCell)``;
 export const GuestRecomendations = styled(TableCol)``;
-export const GuestRecCell = styled(TableCell)``;
+export const GuestRecCell = styled(TableCell)`
+  text-align: end;
+  * {
+    margin-right: 1rem;
+  }
+`;
 
 const tabletAndBelowTableDisplayMediaQ = css`
   @media all and (max-width: ${sizesRem.tablet}) {
