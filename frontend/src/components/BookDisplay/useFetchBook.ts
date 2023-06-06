@@ -141,18 +141,18 @@ interface BookData {
   title: string;
   subtitle: string;
   authors: string[];
-  averageRating: number;
-  ratingsCount: number;
+  averageRating?: number;
+  ratingsCount?: number;
   description: string;
   categories: string[];
   pageCount: number;
   image: {
-    smallThumbnail: string;
-    thumbnail: string;
-    small: string;
-    medium: string;
-    large: string;
-    extraLarge: string;
+    smallThumbnail?: string;
+    thumbnail?: string;
+    small?: string;
+    medium?: string;
+    large?: string;
+    extraLarge?: string;
   };
   publishedDate: string;
 }

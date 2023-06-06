@@ -19,6 +19,7 @@ import {
 } from "./BookDisplay.styles";
 import { dateGenerator } from "./BookDisplay.functions";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import { alldata } from "../../alldata";
 
 const BookDisplay = () => {
   const data = useFetchBook();
@@ -38,6 +39,8 @@ const BookDisplay = () => {
       <LoadContainer>{!failed ? <LoadingScreen /> : <Failed />}</LoadContainer>
     );
   }
+  console.log("data", alldata[data.title]);
+
   return (
     <BookContainer>
       <CoverInfo>
@@ -64,9 +67,17 @@ const BookDisplay = () => {
           <br /> pages
         </PageCount>
         <RatingContainer>
-          {data.averageRating} <Star size={1} />
-          <br />
-          {data.ratingsCount} reviews
+          {data.ratingsCount ? (
+            <>
+              {data.averageRating} <Star size={1} />
+              <br />
+              {data.ratingsCount} reviews
+            </>
+          ) : (
+            <>
+              No reviews <br /> yet
+            </>
+          )}
         </RatingContainer>
         <PublishDate>
           Published <br />
@@ -74,7 +85,13 @@ const BookDisplay = () => {
         </PublishDate>
       </BookDataContainer>
       <Description dangerouslySetInnerHTML={{ __html: data.description }} />
-      <Categories list={data.categories} />
+      <h3>
+        Recomended by:
+        {alldata[data.title]?.guestRecomendation
+          ? alldata[data.title].guestRecomendation.join(", ")
+          : ""}
+      </h3>
+      {data.categories && <Categories list={data.categories} />}
     </BookContainer>
   );
 };
