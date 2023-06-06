@@ -64,9 +64,17 @@ const BookDisplay = () => {
           <br /> pages
         </PageCount>
         <RatingContainer>
-          {data.averageRating} <Star size={1} />
-          <br />
-          {data.ratingsCount} reviews
+          {data.ratingsCount ? (
+            <>
+              {data.averageRating} <Star size={1} />
+              <br />
+              {data.ratingsCount} reviews
+            </>
+          ) : (
+            <>
+              No reviews <br /> yet
+            </>
+          )}
         </RatingContainer>
         <PublishDate>
           Published <br />
