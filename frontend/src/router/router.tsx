@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import App from "../App";
 import TableView from "../pages/TableView";
 import RandomBookView from "../pages/RandomBookView";
@@ -9,7 +13,7 @@ import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import BookPage from "../pages/BookPage/BookPage";
 import AllCategoriesPage from "../pages/AllCategoriesPage/AllCategoriesPage";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <App />,
