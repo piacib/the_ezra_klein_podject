@@ -95,9 +95,7 @@ export const Cover = styled.img`
     height: 610px;
   }
 `;
-export const Subtitle = styled.h2`
-  max-width: 40ch;
-`;
+
 export const CoverData = styled.div`
   margin-bottom: ${(props) => props.theme.spacing.xs};
 `;
