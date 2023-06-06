@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { book, DataType, testData } from "../../mockdata";
+// import { book, DataType, testData } from "../../mockdata";
 import {
   BookCover,
   DisplayRow,
@@ -26,7 +26,8 @@ import {
   EpisodeDateSpan,
   EpisodeTitleSpan,
 } from "./Table.styles";
-const data = testData;
+import { alldata } from "../../alldata";
+const data = alldata;
 const convertToDateStr = (date: Date | null) => {
   if (!date) return "";
   const month = date.getUTCMonth() + 1; //months from 1-12
@@ -55,7 +56,7 @@ const Table = () => {
         </thead>
         <TBody>
           {books.slice(0, 10).map((title) => (
-            <TableRows title={title} data={data.books[title]} />
+            <TableRows title={title} data={data[title]} />
           ))}
         </TBody>
       </TableElement>
