@@ -1,3 +1,4 @@
+import { testData } from "./mockdata";
 export type book = {
   episodeTitle: string[];
   guestRecomendation: string[];
