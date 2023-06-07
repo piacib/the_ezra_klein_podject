@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://piacib.github.io/the_ezra_klein_podject",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "vitest",
     "preview": "vite preview",
-    "predeploy" : "yarn run build",
-"deploy" : "gh-pages -d build"
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
