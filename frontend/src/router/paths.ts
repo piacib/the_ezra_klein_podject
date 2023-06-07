@@ -21,7 +21,7 @@ const paths: PathObject = {
   allcategories: categoryBase,
 };
 export type PathGenerator = (id: string) => string;
-export const pathGenerators: { [k in string]: PathGenerator } = {
+export const pathGenerator: { [k in string]: PathGenerator } = {
   bookpage: (id: string) => `/${bookPageBase}/${id}`,
   categories: (id: string) => `/${categoryBase}/${id}`,
 };
