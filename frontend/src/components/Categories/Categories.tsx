@@ -5,7 +5,7 @@ import {
   CategoryLink,
   LinkWrapper,
 } from "./Categories.styles";
-import paths from "../../router/paths";
+import paths, { pathGenerator } from "../../router/paths";
 interface Props {
   list: string[];
 }
@@ -14,7 +14,7 @@ const Categories = ({ list }: Props) => {
   return (
     <CategoriesContainer>
       {categoryList.map((x) => (
-        <BubbleLink to={paths.categoriesGenerator(x)} key={x}>
+        <BubbleLink to={pathGenerator.categories(x)} key={x}>
           {x}
         </BubbleLink>
       ))}

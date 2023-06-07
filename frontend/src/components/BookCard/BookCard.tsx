@@ -1,5 +1,5 @@
 import { alldata, idTitlePairs } from "../../alldata";
-import paths from "../../router/paths";
+import { pathGenerator } from "../../router/paths";
 import { BookAuthor, BookCardContainer, BookTitle } from "./BookCard.style";
 
 const BookCard = ({ id }: { id: string }) => {
@@ -9,7 +9,7 @@ const BookCard = ({ id }: { id: string }) => {
   const author = bookEntry?.author;
 
   return (
-    <BookCardContainer to={paths.bookpageGenerator(id)}>
+    <BookCardContainer to={pathGenerator.bookpage(id)}>
       <img src={thumbNail} />
       <BookTitle>
         <b>{bookTitle}</b>
