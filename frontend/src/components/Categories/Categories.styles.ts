@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { devices } from "../../styles/devices";
 
 export const CategoryLink = styled(Link)`
   text-decoration: none;
@@ -71,13 +72,16 @@ export const bubbleCSS = css`
   text-align: center;
   font-family: "Dekko", cursive;
   text-transform: uppercase;
-  font-size: 1.5rem;
   line-height: 1.5rem;
   padding: 0.5rem 1.25rem;
   letter-spacing: 0.2rem;
+  font-size: 1rem;
 
   ${comicBackground}
   font-weight: 700;
+  @media ${devices.mobileL} {
+    font-size: 1.5rem;
+  }
 `;
 export const BubbleLink = styled(Link)`
   ${bubbleCSS}
