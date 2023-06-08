@@ -21,8 +21,10 @@ const paths: PathObject = {
   allcategories: categoryBase,
 };
 export type PathGenerator = (id: string) => string;
-export const pathGenerator: { [k in string]: PathGenerator } = {
+export const pathGenerator = {
   bookpage: (id: string) => `/${bookPageBase}/${id}`,
   categories: (id: string) => `/${categoryBase}/${id}`,
-};
+} satisfies { [k in keyof typeof paths]?: PathGenerator };
+// satisfies typing allows keys in pathgenerator to not return potentially undefined
+
 export default paths;
