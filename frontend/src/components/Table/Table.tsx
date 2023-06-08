@@ -28,7 +28,7 @@ import {
   ButtonContainer,
 } from "./Table.styles";
 import { alldata, book, episodeDateObj } from "../../alldata";
-import paths from "../../router/paths";
+import paths, { pathGenerator } from "../../router/paths";
 const data = alldata;
 const convertToDateStr = (date: Date | null) => {
   if (!date) return "";
@@ -142,7 +142,7 @@ const TableRows = ({ data, title }: RowProps) => {
         </TableCell>
         <BookCoverCell>
           <BookCoverContainer
-            to={data.id ? paths.bookpageGenerator(data.id) : ""}
+            to={data.id ? pathGenerator.bookpage(data.id) : ""}
           >
             <BookCover src={getImage(data.imageLinks)} />
           </BookCoverContainer>
