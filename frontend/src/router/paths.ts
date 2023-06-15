@@ -1,3 +1,5 @@
+import { getRandomBook } from "../alldata";
+
 export type PathObject = {
   table: string;
   randombook: string;
@@ -13,7 +15,7 @@ const categoryBase = "category";
 
 const paths: PathObject = {
   table: "table",
-  randombook: "randombook",
+  randombook: `${bookPageBase}`,
   home: "",
   books: "books",
   bookpage: `${bookPageBase}/:id`,
@@ -23,6 +25,7 @@ const paths: PathObject = {
 export type PathGenerator = (id: string) => string;
 export const pathGenerator = {
   bookpage: (id: string) => `/${bookPageBase}/${id}`,
+  randombook: () => `/${bookPageBase}/${getRandomBook()}`,
   categories: (id: string) => `/${categoryBase}/${id}`,
 } satisfies { [k in keyof typeof paths]?: PathGenerator };
 // satisfies typing allows keys in pathgenerator to not return potentially undefined
