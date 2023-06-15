@@ -14502,3 +14502,13 @@ export const recommendedId = (length = 10) => {
   }
   return result;
 };
+
+export const getRandomBook = () => {
+  let id = null;
+  while (!id) {
+    const list = Object.keys(alldata);
+    const idx = Math.floor(Math.random() * list.length);
+    id = alldata[list[idx]].id;
+  }
+  return id;
+};

@@ -1,11 +1,6 @@
-import {
-  createBrowserRouter,
-  createHashRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import App from "../App";
 import TableView from "../pages/TableView";
-import RandomBookView from "../pages/RandomBookView";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import paths from "./paths";
 import BooksPage from "../pages/BooksPage/BooksPage";
@@ -30,7 +25,6 @@ export const router = createHashRouter([
         path: paths.books,
         element: <BooksPage />,
       },
-      { path: paths.randombook, element: <RandomBookView /> },
       { path: paths.categories, element: <CategoryPage /> },
       { path: paths.bookpage, element: <BookPage /> },
       { path: paths.allcategories, element: <AllCategoriesPage /> },
