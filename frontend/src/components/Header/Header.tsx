@@ -2,11 +2,11 @@ import { Container, Title } from "./Header.styles";
 import Books from "../BookStack/BookStack";
 import paths, { pathGenerator } from "../../router/paths";
 import { Nav, StyledLink } from "./Nav.styles";
-import { useReducer, useRef, useState } from "react";
-
+import { useReducer } from "react";
+const regenerateBook = () => pathGenerator.randombook();
 const Header = () => {
   const [randomBook, updateBook] = useReducer(
-    () => pathGenerator.randombook(),
+    regenerateBook,
     pathGenerator.randombook()
   );
   return (
