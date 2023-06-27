@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { idTitlePairs } from "../../alldata";
 const bookEntry = {
   kind: "books#volume",
@@ -159,12 +159,10 @@ interface BookData {
 }
 const useFetchBook = () => {
   const { id } = useParams();
-
   const { status, data, error, loading } = useFetch<GoogleBookAPIResponse>(
     googleBookAPIGenerator(id ? id : "")
   );
   const [bookData, setBookData] = useState<BookData | undefined>(undefined);
-  console.log(id, { status, data, error, loading });
   useEffect(() => {
     if (!id) {
       return;
@@ -193,7 +191,7 @@ const useFetchBook = () => {
         publishedDate,
       });
     }
-  }, [status]);
+  }, [status, id]);
   return bookData;
 };
 interface ApiResponse<T> {
@@ -213,7 +211,7 @@ export function useFetch<T>(url: string): ApiResponse<T> | ApiResponse200<T> {
   const [data, setData] = useState<undefined | T>(undefined);
   const [error, setError] = useState<undefined | Error>(undefined);
   const [loading, setLoading] = useState<boolean>(false);
-  async function getAPIData() {
+  async function getAPIData(url: string) {
     setLoading(true);
     try {
       const response = await fetch(url);
@@ -245,8 +243,8 @@ export function useFetch<T>(url: string): ApiResponse<T> | ApiResponse200<T> {
   }
 
   useEffect(() => {
-    getAPIData();
-  }, []);
+    getAPIData(url);
+  }, [url]);
   if (status === 200) {
     return { status, data, error, loading } as ApiResponse200<T>;
   }
