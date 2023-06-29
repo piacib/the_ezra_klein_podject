@@ -437,7 +437,7 @@ Error generating stack: `+n.message+`
   
 `,J1=z.a`
   
-`,w1=()=>b.jsxs(C1,{children:[b.jsx(z1,{}),b.jsx(J1,{})]});function _1(){const o=async()=>{const e=await fetch("http://127.0.0.1:3000/the_ezra_klein_podject",{method:"GET"});console.log(e);const t=await e.json();console.log(t)};return B.useEffect(()=>{console.log(o())},[]),b.jsx(qf,{children:b.jsxs("div",{className:"App",children:[b.jsx(B1,{}),b.jsx(Ck,{}),b.jsx(w1,{})]})})}z(Ur)`
+`,w1=()=>b.jsxs(C1,{children:[b.jsx(z1,{}),b.jsx(J1,{})]});function _1(){const o=async()=>{const e=await fetch("/the_ezra_klein_podject",{method:"GET"});console.log(e);const t=await e.json();console.log(t)};return B.useEffect(()=>{console.log(o())},[]),b.jsx(qf,{children:b.jsxs("div",{className:"App",children:[b.jsx(B1,{}),b.jsx(Ck,{}),b.jsx(w1,{})]})})}z(Ur)`
   text-decoration: none;
   padding: 1.25rem 2rem;
   border-radius: 5rem;
